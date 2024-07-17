@@ -1,0 +1,215 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  padding: 10px;
+  padding-inline: 5%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.todo-message {
+  display: inline-block;
+  text-align: center;
+  font-weight: 600;
+  font-size: large;
+}
+
+.todo-head {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 7px;
+  max-height: max-content;
+}
+
+.todo-head>h3 {
+  margin-block: 10px;
+  font-weight: 800;
+  font-size: x-large;
+  color: #13AD89;
+}
+
+.todo-add {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 5vw;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.todo-add>label {
+  position: absolute;
+  left: -99999px;
+}
+
+.todo-add>input {
+  width: 80%;
+  max-width: 300px;
+  height: 35px;
+  padding: 5px;
+  font-size: 0.9rem;
+  border: 1px solid #13AD89;
+}
+
+.todo-add-btn {
+  padding: 5px 18px;
+  font-size: 1rem;
+  border-radius: 7px;
+  border: none;
+  outline: none;
+  background-color: #13AD89;
+  color: whitesmoke;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.filter-box {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+  column-gap: 100px;
+}
+
+.filter-box>span {
+  font-weight: 600;
+  font-size: larger;
+}
+
+#todo-filter {
+  border: none;
+  width: min-content;
+  padding: 4px;
+  background-color: #FF7E80;
+  color: whitesmoke;
+  cursor: pointer;
+}
+
+:is(#todo-filter, .card-status, button):hover,
+:is(#todo-filter, .card-status, button, input):focus {
+  outline: 1px solid black;
+  color: black;
+  border: none;
+}
+
+input:focus {
+  background-color: whitesmoke;
+}
+
+input::selection {
+  background-color: aqua;
+  color: black;
+}
+
+
+#todo-filter.completed {
+  background-color: #13AD89;
+}
+
+option {
+  background-color: white;
+  color: black;
+  cursor: pointer;
+}
+
+.card-status {
+  padding: 4px;
+  cursor: pointer;
+  background-color: rgb(233, 114, 114);
+  border: none;
+  color: whitesmoke;
+}
+
+.card-status.notCompleted {
+  background-color: rgb(233, 114, 114);
+}
+
+.card-status.completed {
+  background-color: #13AD89;
+}
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  column-gap: 4%;
+  row-gap: 15px;
+  font-size: 1.1rem;
+}
+
+.todo-card {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: start;
+  align-items: start;
+  gap: 20px;
+  background: #CCF5D3;
+  padding: 10px;
+  border-radius: 5px;
+  width: 100%;
+  max-width: 600px;
+  height: min(30vh, max-content);
+  overflow: hidden;
+}
+
+.card--name,
+.card--description {
+  width: 100%;
+  padding-block: 5px;
+  overflow: hidden;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.todo--button-group {
+  margin-top: auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 15px;
+  width: 100%;
+  justify-content: end;
+  align-items: center;
+}
+
+.todo--button-group>button {
+  padding: 5px 10px;
+  font-size: 1rem;
+  border-radius: 7px;
+  border: none;
+  outline: none;
+  width: 70px;
+  color: whitesmoke;
+  cursor: pointer;
+}
+
+.todo--card-edit {
+  background-color: #13AD89;
+}
+
+.todo--card-delete {
+  background-color: #D05E1F;
+}
+
+@media screen and (width <=880px) {
+  .todo-add {
+    flex-direction: column;
+  }
+}
+
+@media screen and (width <=700px) {
+  .card-container {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    place-items: center;
+  }
+}
